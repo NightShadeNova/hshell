@@ -1,0 +1,13 @@
+#sudo pacman -S readline
+https://www.cppreference.com
+https://www.geeksforgeeks.org/cpp/cpp-stl-tutorial/
+https://linux.die.net/man/3/execvp
+https://stackoverflow.com/questions/7352099/stdstring-to-char
+https://www.youtube.com/watch?v=O1UOWScmqxg
+https://en.cppreference.com/w/c/program/EXIT_status
+https://doc.rust-lang.org/book/ch20-01-unsafe-rust.html#using-extern-functions-to-call-external-code
+https://rust-lang.github.io/rust-bindgen/introduction.html
+https://github.com/mozilla/cbindgen/blob/main/docs.md
+https://docs.rs/crate/cbindgen/latest
+https://makefiletutorial.com/
+https://doc.rust-lang.org/nomicon/ffi.html
