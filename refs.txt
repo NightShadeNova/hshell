@@ -12,6 +12,8 @@ https://docs.rs/crate/cbindgen/latest
 https://makefiletutorial.com/
 https://doc.rust-lang.org/nomicon/ffi.html
 https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html
+https://doc.rust-lang.org/std/fs/index.html
+https://users.rust-lang.org/t/to-string-vs-to-owned-for-string-literals/1441/2 -- https://www.youtube.com/watch?v=tUG_NItm2HY
 
 https://www.slingacademy.com/article/working-with-cstring-and-cstr-to-integrate-rust-strings-with-c-code/
 
