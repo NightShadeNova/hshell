@@ -11,3 +11,9 @@ https://github.com/mozilla/cbindgen/blob/main/docs.md
 https://docs.rs/crate/cbindgen/latest
 https://makefiletutorial.com/
 https://doc.rust-lang.org/nomicon/ffi.html
+https://doc.rust-lang.org/std/slice/fn.from_raw_parts.html
+
+https://www.slingacademy.com/article/working-with-cstring-and-cstr-to-integrate-rust-strings-with-c-code/
+
+*const c_char -- Pointer to a single constant C char -- Single C-style string
+*const *const c_char -- Pointer to a constant pointer to a constant C char -- Array of C strings (argv)
