@@ -17,6 +17,10 @@ std::vector<std::string> parseCommand(std::string& inp_line){
     }
     return args;
 }
+
+extern "C" int rustexe(const char** argv, int argc);
+int exec_rust(std::vector<std::string>& tokens);
+
 void exe(std::vector<std::string>& tokens){
     std::vector<char*> c_args;
 
