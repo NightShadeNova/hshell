@@ -6,7 +6,8 @@
 #include <sys/wait.h>
 #include <sstream>
 #include <stdlib.h>
-#include "hshell/rust_builtins/rust_builtins.h"
+#include <cstring>
+#include "../rust_builtins/rust_builtins.h"
 
 std::vector<std::string> parseCommand(std::string& inp_line){
     std::vector<std::string> args;
@@ -18,8 +19,23 @@ std::vector<std::string> parseCommand(std::string& inp_line){
     return args;
 }
 
-extern "C" int rustexe(const char** argv, int argc);
-int exec_rust(std::vector<std::string>& tokens);
+//extern "C" int rustexe(char** argv, int argc)
+int rust_exec(const std::vector<std::string>& tokens){
+    std::vector<char*> c_args;
+
+    for (const auto& token:tokens){
+        char* cstr = new char[token.length()+1];//+1 for nullptr to be added at the end
+        strcpy(cstr, token.c_str());
+        c_args.push_back(cstr);
+    }
+    c_args.push_back(NULL);
+
+    int status = rustexe(c_args.data(), static_cast<int>(tokens.size()));//calling rust fn + it returns exit code
+    for(size_t i=0; i < tokens.size(); i++){
+        delete[] c_args[i];        
+    }
+    return status;
+}
 
 void exe(std::vector<std::string>& tokens){
     std::vector<char*> c_args;
@@ -52,10 +68,19 @@ void shell_loop(){
         if (inp_line.empty()) continue;
 
         std::vector<std::string> tokens = parseCommand(inp_line);
-        if(tokens.empty()) break;
+        if (tokens.empty()) break;
         if (tokens[0] == "exit" || tokens[0] == "Exit") break;
         
-        exe(tokens);
+        if (tokens[0] == "help"){
+            exe(tokens);
+            continue;
+        }
+        else if (tokens[0] == "rustls"){
+            int status = rust_exec(tokens);
+            if (status != 0) std::cout << "Error: " << status << std::endl;
+            continue;
+        }
+        else exe(tokens);
     }
 }
 
