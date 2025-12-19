@@ -17,3 +17,6 @@
 #### Execution
 - Run shell executable  
 	`./my_shell`
+
+- Testing custom command  
+	`hybrid_shell~ rustls ./src`
