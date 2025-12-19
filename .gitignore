@@ -1,0 +1,10 @@
+*.o
+my_shell
+
+target/
+**/target/
+
+.DS_store
+*.so
+*.dylib
+*.dll
