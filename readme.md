@@ -8,12 +8,12 @@
 		2. Rust and Cargo
 		3. Make
 #### Build Procedure
-- Clone Repository 
+- Clone Repository  
 		`git clone [https://github.com/NightShadeNova/hshell.git](https://github.com/NightShadeNova/hshell.git)`
 
-- Compile program
+- Compile program  
 		`make	`
 
 #### Execution
-- Run shell executable
+- Run shell executable  
 	`./my_shell`
