@@ -1,6 +1,5 @@
 # hshell (Hybrid C++/Rust Shell)
-
- A custom shell interpreter that bridges **C++ and Rust using FFI**, making use of Rust's memory safety and modern features within a classical C++ systems environment.
+### A custom shell interpreter that bridges **C++ and Rust using FFI**, making use of Rust's memory safety and modern features within a classical C++ systems environment.
 
 
 ####  Prerequisites: You need to have these installed
